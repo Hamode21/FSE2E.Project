@@ -17,3 +17,13 @@ document.addEventListener('keydown', function (e) {
     }
   }
 });
+function resetGame() {
+  document.querySelectorAll('.pipe_sprite').forEach(function (pipe) {
+    pipe.remove();
+  });
+
+  bird.style.top = '40vh';
+  birdDy = 0;
+  gameState = 'Start';
+}
+
