@@ -16,3 +16,12 @@ body {
     background-position: center; 
     background-repeat: no-repeat; 
 }
+.bird {
+    height: 60px;
+    width: 60px;
+    position: fixed;
+    top: 40vh;
+    left: 30vw;
+    z-index: 100;
+    
+}
