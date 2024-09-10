@@ -25,3 +25,22 @@ body {
     z-index: 100;
     
 }
+.pipe_sprite {
+    position: fixed;
+    top: 40vh;
+    left: 100vw;
+    height: 70vh;
+    width: 6vw;
+    background-color: rgb(0, 0, 0);
+}
+
+.message {
+    position: fixed;
+    z-index: 10;
+    height: 10vh;
+    font-size: 10vh;
+    font-weight: 100;
+    color: goldenrod;
+    top: 12vh;
+    left: 20vw;
+    text-align: center;
