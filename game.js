@@ -10,3 +10,10 @@ let message = document.querySelector('.message');
 let scoreTitle = document.querySelector('.score_title');
 
 let gameState = 'Start';
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Enter') {
+    if (gameState === 'Start' || gameState === 'End') {
+      startGame();
+    }
+  }
+});
