@@ -26,4 +26,14 @@ function resetGame() {
   birdDy = 0;
   gameState = 'Start';
 }
-
+function startGame() {
+  resetGame();
+  gameState = 'Play';
+  message.innerHTML = '';
+  scoreTitle.innerHTML = 'Score: ';
+  scoreVal.innerHTML = '0';
+  moveSpeed = 2;
+  pipeGap = 45;
+  pipeSeparation = 150;
+  playGame();
+}
