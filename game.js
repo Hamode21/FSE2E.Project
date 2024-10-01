@@ -11,3 +11,17 @@ let background = document.querySelector('.background').getBoundingClientRect();
 let scoreVal = document.querySelector('.score_val');
 let message = document.querySelector('.message');
 let scoreTitle = document.querySelector('.score_title');
+// מצב התחלתי
+let gameState = 'Start';
+let birdDy = 0;
+let gameInterval; // משתנה עבור setInterval
+
+// פונקציה בודקת אם להחיל את המשחק
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Enter') {
+    if (gameState === 'Start' || gameState === 'End') {
+      startGame();
+    }
+  }
+});
+
