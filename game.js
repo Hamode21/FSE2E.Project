@@ -112,3 +112,28 @@ function applyGravity() {
   bird.style.top = birdPos.top + birdDy + 'px';
 }
 
+// פונקציה ליצר עמודים (מכשולים)
+function createPipe() {
+  if (gameState !== 'Play') return;
+
+  if (pipeSeparation > 118) {
+    pipeSeparation = 0;
+
+    let pipePosition = Math.floor(Math.random() * 43) + 8;
+
+    let topPipe = document.createElement('div');
+    topPipe.className = 'pipe_sprite';
+    topPipe.style.top = pipePosition - 70 + 'vh';
+    topPipe.style.left = '100vw';
+    document.body.appendChild(topPipe);
+
+    let bottomPipe = document.createElement('div');
+    bottomPipe.className = 'pipe_sprite';
+    bottomPipe.style.top = pipePosition + pipeGap + 'vh'; // Set gap based on pipeGap
+    bottomPipe.style.left = '100vw';
+    bottomPipe.setAttribute('increase_score', '1');
+    document.body.appendChild(bottomPipe);
+  }
+
+  pipeSeparation++;
+}
