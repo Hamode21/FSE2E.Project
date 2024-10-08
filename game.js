@@ -24,4 +24,24 @@ document.addEventListener('keydown', function (e) {
     }
   }
 });
+// איפוס משחק
+function resetGame() {
+  clearInterval(gameInterval); //עוצר את המשחק אם הוא רץ
+  document.querySelectorAll('.pipe_sprite').forEach(function (pipe) {
+    pipe.remove();
+  });
 
+  bird.style.top = '40vh';
+  birdDy = 0;
+  gameState = 'Start';
+}
+// התחלת המשחק
+function startGame() {
+  resetGame();
+  gameState = 'Play';
+  message.innerHTML = '';
+  scoreTitle.innerHTML = 'Score: ';
+  scoreVal.innerHTML = '0';
+  moveSpeed = 2;
+  pipeGap = 70;  // Reset gap to the initial large gap
+  pipeSeparation = 150;
