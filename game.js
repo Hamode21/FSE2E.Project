@@ -137,3 +137,10 @@ function createPipe() {
 
   pipeSeparation++;
 }
+
+// פונקציה לרמת הקשה  של משחק לפי הסקור
+function adjustDifficulty(score) {
+  if (score % 10 === 0) {
+    moveSpeed += 1; //  מעלה מהירות
+    pipeGap = Math.max(30, pipeGap - 5); // מקטין מרווח בין עמודים אך לא פחות מ 30
+  }
