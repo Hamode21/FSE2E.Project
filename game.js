@@ -90,3 +90,25 @@ function movePipes() {
   });
 }
 
+// פונקציה GRAVITY לציפור
+function applyGravity() {
+  if (gameState !== 'Play') return;
+
+  birdDy += gravity;
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === ' ' || e.key === 'Spacebar') {
+      birdDy = -15; // קפיצה
+    }
+  });
+
+  let birdPos = bird.getBoundingClientRect();
+  if (birdPos.top <= 0 || birdPos.bottom >= background.bottom) {
+    gameState = 'End';
+    message.innerHTML = 'Press Enter To Restart';
+    clearInterval(gameInterval); // עוצר את המשחק כשמפסידים
+  }
+
+  bird.style.top = birdPos.top + birdDy + 'px';
+}
+
