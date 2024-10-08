@@ -144,3 +144,8 @@ function adjustDifficulty(score) {
     moveSpeed += 1; //  מעלה מהירות
     pipeGap = Math.max(30, pipeGap - 5); // מקטין מרווח בין עמודים אך לא פחות מ 30
   }
+//Increase gravity when score reaches or exceeds 70
+  if (score >= 70) {
+    gravity += 0.1; // Increase gravity by 0.1 when score is 80 or higher
+  }
+}
