@@ -45,3 +45,14 @@ function startGame() {
   moveSpeed = 2;
   pipeGap = 70;  // Reset gap to the initial large gap
   pipeSeparation = 150;
+    // מפעיל את המשחק בקצב קבוע
+  gameInterval = setInterval(playGame, intervalTime);
+}
+
+// Function to run the game logic
+function playGame() {
+  movePipes();
+  applyGravity();
+  createPipe();
+}
+
